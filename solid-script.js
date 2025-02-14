@@ -3,14 +3,13 @@
 const fetch = require('node-fetch');
 const { createDpopHeader, generateDpopKeyPair } = require('@inrupt/solid-client-authn-core');
 const { buildAuthenticatedFetch } = require('@inrupt/solid-client-authn-core');
-
-
 const { getFile, getContentType, getSourceUrl } =require('@inrupt/solid-client');
 
 // Le WebID de Bob (à adapter)
 const bobWebId = "http://localhost:3000/bob/profile/card#me";
-const fileUrl = "http://localhost:3000/alice/private/private-document.txt";
 
+// The private file URL (adjust based on your server)
+const fileUrl = "http://localhost:3000/alice/private/private-document.txt";
 
 // URL de l'ACL (habituellement, c'est l'URL du fichier suivi de ".acl")
 const aclUrl = fileUrl + ".acl";
@@ -36,7 +35,6 @@ const aclContent = `
     acl:accessTo <${fileUrl}>;
     acl:mode acl:Read.
 `;
-
 
 async function loginAndGetAuthorization() {
   try {
