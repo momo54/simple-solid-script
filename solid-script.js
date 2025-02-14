@@ -4,17 +4,6 @@ const fetch = require('node-fetch');
 const { createDpopHeader, generateDpopKeyPair } = require('@inrupt/solid-client-authn-core');
 const { buildAuthenticatedFetch } = require('@inrupt/solid-client-authn-core');
 
-const {
-  getSolidDatasetWithAcl,
-  hasResourceAcl,
-  hasAccessibleAcl,
-  hasFallbackAcl,
-  createAcl,
-  createAclFromFallbackAcl,
-  getResourceAcl,
-  setAgentResourceAccess,
-  saveAclFor,
-} = require("@inrupt/solid-client");
 
 const { getFile, getContentType, getSourceUrl } =require('@inrupt/solid-client');
 
